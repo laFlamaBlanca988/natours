@@ -12,7 +12,7 @@ router
   .route('/')
   .get(getAllUsers)
   .post(createUser);
-
+// user router
 router
   .route('/:id')
   .get(getUser)
