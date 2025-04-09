@@ -3,7 +3,8 @@ import morgan from 'morgan';
 
 import tourRouter from './routes/tourRoutes.js';
 import userRouter from './routes/userRoutes.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 
 if (process.env.NODE_ENV === 'development') {
