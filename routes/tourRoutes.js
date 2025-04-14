@@ -5,11 +5,12 @@ import {
   updateTour,
   createTour,
   deleteTour,
-  aliasTopTours
+  aliasTopTours,
+  getTourStats,
+  getMonthlyPlan
 } from '../controllers/tourController.js';
-const router = express.Router();
 
-router.route('/top-5-cheap').get(aliasTopTours, getAllTours);
+const router = express.Router();
 
 router
   .route('/')
@@ -22,4 +23,7 @@ router
   .patch(updateTour)
   .delete(deleteTour);
 
+router.route('/top-5-cheap').get(aliasTopTours, getAllTours);
+router.route('/tour-stats').get(getTourStats);
+router.route('/monthly-plan/:year').get(getMonthlyPlan);
 export default router;
